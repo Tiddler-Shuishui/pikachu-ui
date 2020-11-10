@@ -1,15 +1,14 @@
 <template>
-  <div>hi</div>
-  <Hugh />
+<div>
+  导航栏 | <router-link to="/">Hugh </router-link> |
+  <router-link to="/xxx">Hugh2 </router-link>
+</div>
+<hr />
+<router-view />
 </template>
 
 <script>
-import Hugh from './components/Hugh.vue'
-
 export default {
   name: 'App',
-  components: {
-    Hugh,
-  },
 }
 </script>
