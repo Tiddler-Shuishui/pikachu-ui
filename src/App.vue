@@ -10,7 +10,8 @@ import {
 export default {
   name: 'App',
   setup() {
-    const asideVisible = ref(false)
+    const width = document.documentElement.clientWidth
+    const asideVisible = ref(width >= 500)
     provide('asideVisible', asideVisible)
   },
 }
