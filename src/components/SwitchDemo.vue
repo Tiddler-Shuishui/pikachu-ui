@@ -1,3 +1,3 @@
 <template>
-<div>SwitchDemo</div>
+<div>Switch 示例</div>
 </template>
