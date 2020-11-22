@@ -2,7 +2,7 @@
 <div>Button 示例</div>
 <h1>示例 1</h1>
 <div>
-  <Button @click="onClick">你好</Button>
+  <Button @click="onClick" @focus="onClick" @mouseover="onClick" size="small" level="normal">你好</Button>
 </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
       console.log('hi')
     }
     return {
-      onClick
+      onClick,
     }
   },
 }
