@@ -31,23 +31,29 @@ button {
   background: grey;
   border-radius: $h/2;
   position: relative;
-}
+  transition: background 250ms;
 
-span {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  height: $h2;
-  width: $h2;
-  background: white;
-  border-radius: $h2 / 2;
-}
+  &.checked {
+    background: blue;
 
-button.checked {
-  background: blue;
+    >span {
+      left: calc(100% - #{$h2} - 2px);
+    }
+  }
 
-  >span {
-    left: calc(100% - #{$h2} - 2px);
+  span {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: $h2;
+    width: $h2;
+    background: white;
+    border-radius: $h2 / 2;
+    transition: left 250ms;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 </style>
