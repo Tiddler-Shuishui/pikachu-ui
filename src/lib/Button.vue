@@ -89,17 +89,15 @@ $radius: 4px;
       background: darken(white, 5%);
     }
   }
-  &.qing-theme-button {
-    &.qing-size-big {
-      font-size: 24px;
-      height: 48px;
-      padding: 0 16px;
-    }
-    &.qing-size-small {
-      font-size: 12px;
-      height: 20px;
-      padding: 0 4px;
-    }
+  &.qing-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.qing-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 }
 </style>
