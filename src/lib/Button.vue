@@ -1,7 +1,7 @@
 <template>
-<button class="qing-button" :class="{ [`theme-${theme}`]: theme }">
-  <slot />
-</button>
+  <button class="qing-button" :class="{ [`qing-theme-${theme}`]: theme }">
+    <slot />
+  </button>
 </template>
 
 <script lang="ts">
@@ -37,7 +37,7 @@ $radius: 4px;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
 
-  &+& {
+  & + & {
     margin-left: 8px;
   }
 
@@ -53,6 +53,26 @@ $radius: 4px;
 
   &::-moz-focus-inner {
     border: 0;
+  }
+
+  &.qing-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lingten($blue, 10%);
+    }
+  }
+
+  &.qing-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
   }
 }
 </style>
