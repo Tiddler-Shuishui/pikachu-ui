@@ -1,5 +1,5 @@
 <template>
-  <button class="qing-button" :class="classes">
+  <button class="qing-button" :class="classes" :disabled="disabled">
     <slot />
   </button>
 </template>
@@ -19,6 +19,10 @@ export default {
     level: {
       type: String,
       default: 'normal',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props) {
@@ -42,6 +46,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
 
 .qing-button {
   box-sizing: border-box;
@@ -127,20 +132,36 @@ $red: red;
       }
     }
   }
-  &.gulu-theme-text {
-    &.gulu-level-main {
+  &.qing-theme-text {
+    &.qing-level-main {
       color: $blue;
       &:hover,
       &:focus {
         color: darken($blue, 10%);
       }
     }
-    &.gulu-level-danger {
+    &.qing-level-danger {
       color: $red;
       &:hover,
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+  &.qing-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.qing-theme-link,
+  &.qing-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
