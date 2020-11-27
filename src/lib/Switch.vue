@@ -1,11 +1,15 @@
 <template>
-<button @click="toggle" :class="{ checked: value }"><span></span></button>
+  <button
+    class="qing-switch"
+    @click="toggle"
+    :class="{ 'qing-checked': value }"
+  >
+    <span></span>
+  </button>
 </template>
 
 <script lang="ts">
-import {
-  ref
-} from 'vue'
+import { ref } from 'vue'
 export default {
   props: {
     value: Boolean,
@@ -25,7 +29,7 @@ export default {
 $h: 22px;
 $h2: $h - 4px;
 
-button {
+.qing-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -34,10 +38,10 @@ button {
   position: relative;
   transition: background 250ms;
 
-  &.checked {
+  &.qing-checked {
     background: blue;
 
-    >span {
+    > span {
       left: calc(100% - #{$h2} - 2px);
     }
   }
@@ -58,13 +62,13 @@ button {
   }
 
   &:active {
-    >span {
+    > span {
       width: $h2 + 4px;
     }
   }
 
   button.checked:active {
-    >span {
+    > span {
       width: $h2 + 4px;
       margin-left: -4px;
     }
