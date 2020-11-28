@@ -4,11 +4,11 @@
     <div class="qing-dialog-wrapper">
       <div class="qing-dialog">
         <header>
-          标题 <span class="qing-dialog-close" @click="close"></span>
+          <slot name="title" />
+          <span class="qing-dialog-close" @click="close"></span>
         </header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot name="content" />
         </main>
         <footer>
           <Button level="main" @click="ok">OK</Button>
