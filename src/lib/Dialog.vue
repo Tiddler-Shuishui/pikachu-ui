@@ -1,16 +1,18 @@
 <template>
   <template v-if="visible">
-    <div class="qing-dialog-overlay"></div>
+    <div class="qing-dialog-overlay" @click="onClickOverlay"></div>
     <div class="qing-dialog-wrapper">
       <div class="qing-dialog">
-        <header>标题 <span class="qing-dialog-close"></span></header>
+        <header>
+          标题 <span class="qing-dialog-close" @click="close"></span>
+        </header>
         <main>
           <p>第一行字</p>
           <p>第二行字</p>
         </main>
         <footer>
-          <Button level="main">OK</Button>
-          <Button>Cancel</Button>
+          <Button level="main" @click="ok">OK</Button>
+          <Button @click="cancle">Cancel</Button>
         </footer>
       </div>
     </div>
@@ -25,9 +27,44 @@ export default {
       type: Boolean,
       default: false,
     },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    ok: {
+      type: Function,
+    },
+    cancle: {
+      type: Function,
+    },
   },
   components: {
     Button,
+  },
+  setup(props, context) {
+    const close = () => {
+      context.emit('update:visible', false)
+    }
+    const onClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close()
+      }
+    }
+    const ok = () => {
+      if (props.ok?.() !== false) {
+      }
+      close()
+    }
+    const cancle = () => {
+      context.emit('cancle')
+      close()
+    }
+    return {
+      close,
+      onClickOverlay,
+      ok,
+      cancle,
+    }
   },
 }
 </script>
