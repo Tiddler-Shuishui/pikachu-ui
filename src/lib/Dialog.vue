@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="qing-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="qing-dialog-wrapper">
-      <div class="qing-dialog">
-        <header>
-          <slot name="title" />
-          <span class="qing-dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <slot name="content" />
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancle">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="qing-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="qing-dialog-wrapper">
+        <div class="qing-dialog">
+          <header>
+            <slot name="title" />
+            <span class="qing-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content" />
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancle">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
