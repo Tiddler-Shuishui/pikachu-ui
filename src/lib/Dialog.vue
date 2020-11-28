@@ -58,7 +58,7 @@ export default {
       close()
     }
     const cancle = () => {
-      context.emit('cancle')
+      props.cancle?.()
       close()
     }
     return {
