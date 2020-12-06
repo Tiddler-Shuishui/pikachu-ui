@@ -18,13 +18,7 @@
       <div class="qing-tabs-nav-item-indicator" ref="indicator"></div>
     </div>
     <div class="qing-tabs-content">
-      <component
-        class="qing-tabs-content-item"
-        v-for="(c, index) in defaults"
-        :class="{ selected: c.props.title === selected }"
-        :key="index"
-        :is="c"
-      />
+      <component :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>
@@ -58,6 +52,9 @@ export default {
         throw new Error('Tabs 的子标签必须是 Tab')
       }
     })
+    const current = computed(() => {
+      return defaults.find((tag) => tag.props.title === props.selected)
+    })
     const titles = defaults.map((tag) => {
       return tag.props.title
     })
@@ -65,6 +62,7 @@ export default {
       context.emit('update:selected', title)
     }
     return {
+      current,
       defaults,
       titles,
       select,
@@ -114,14 +112,6 @@ $border-color: #d9d9d9;
   }
   &-content {
     padding: 8px 0;
-
-    &-item {
-      display: none;
-
-      &.selected {
-        display: block;
-      }
-    }
   }
 }
 </style>
