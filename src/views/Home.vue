@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$green: #bbeeeb;
 .topnavAndBanner {
   background: linear-gradient(
     145deg,
@@ -41,7 +42,7 @@ export default {
 
     a {
       margin: 0 8px;
-      background: #fff;
+      background: $green;
       display: inline-block;
       $h: 28px;
       height: $h;
