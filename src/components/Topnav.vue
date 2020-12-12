@@ -6,8 +6,9 @@
       </svg>
     </div>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/doc"> 文档 </router-link>
+      </li>
     </ul>
     <span class="toggleAside" @click="toggleAside"></span>
   </div>
@@ -44,7 +45,7 @@ export default {
     > svg {
       width: 32px;
       height: 32px;
-      color: rgb(1, 225, 255);
+      color: orangered;
     }
   }
 
