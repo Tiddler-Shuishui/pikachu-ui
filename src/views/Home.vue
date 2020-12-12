@@ -10,6 +10,17 @@
       </p>
     </div>
   </div>
+  <div class="features">
+    <svg class="icon">
+      <use xlink:href="#icon-Vue"></use>
+    </svg>
+    <svg class="icon">
+      <use xlink:href="#icon-typescript"></use>
+    </svg>
+    <svg class="icon">
+      <use xlink:href="#icon-light"></use>
+    </svg>
+  </div>
 </template>
 
 <script lang="ts">
@@ -50,6 +61,12 @@ $green: #bbeeeb;
       border-radius: $h/2;
       padding: 0 8px;
     }
+  }
+}
+.features {
+  > svg {
+    width: 64px;
+    height: 64px;
   }
 }
 </style>
