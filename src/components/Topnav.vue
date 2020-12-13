@@ -66,19 +66,22 @@ export default {
       margin: 0 1em;
     }
   }
+  > .toggleAside {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: fade-out($color: #000000, $amount: 0.9);
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+  }
 
   @media (max-width: 500px) {
     > .toggleAside {
-      display: inline-block;
-      width: 32px;
-      height: 32px;
-      background: fade-out($color: #000000, $amount: 0.9);
-      position: absolute;
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
+      display: inline;
     }
-
     > .menu {
       display: none;
     }
