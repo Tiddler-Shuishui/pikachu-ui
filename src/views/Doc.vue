@@ -49,10 +49,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$aside-index: 10;
 .layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  z-index: $aside-index;
 
   > .nav {
     flex-shrink: 0;
