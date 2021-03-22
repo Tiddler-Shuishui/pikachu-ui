@@ -53,12 +53,12 @@ export default {
       }
     }
     const ok = () => {
-      if (props && props.ok() !== false) {
+      if (props.ok && props.ok() !== false) {
       }
       close()
     }
     const cancle = () => {
-      props && props.cancle()
+      props.cancle && props.cancle()
       close()
     }
     return {
