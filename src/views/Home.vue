@@ -2,10 +2,10 @@
   <div class="topnavAndBanner">
     <Topnav />
     <div class="banner">
-      <h1>Qing UI</h1>
+      <h1>Lithely UI</h1>
       <h2>一个很厉害的 UI 框架</h2>
       <p class="actions">
-        <a href="http://github.com">GitHub</a>
+        <a href="https://github.com/Tiddler-Shuishui/lithely-ui">GitHub</a>
         <router-link to="/doc">开始</router-link>
       </p>
     </div>

@@ -3,13 +3,13 @@
 打开终端运行下列命令：
 
 ```
-npm install qing-ui
+npm install lithely-ui
 ```
 
 或
 
 ```
-yarn add qing-ui
+yarn add lithely-ui
 ```
 
 下一节：[开始使用](#/doc/get-started)

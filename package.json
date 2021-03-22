@@ -1,11 +1,11 @@
 {
-  "name": "qing-ui",
-  "version": "0.0.1",
+  "name": "lithely-ui",
+  "version": "0.0.0",
   "files": [
     "dist/lib/*"
   ],
-  "main": "dist/lib/qing.js",
-  "module": "dist/lib/qing.esm.js",
+  "main": "dist/lib/lithely.js",
+  "module": "dist/lib/lithely.esm.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"

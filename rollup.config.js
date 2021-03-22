@@ -12,13 +12,13 @@ export default {
     globals: {
       vue: 'Vue'
     },
-    name: 'Qing',
-    file: 'dist/lib/qing.js',
+    name: 'Lithely',
+    file: 'dist/lib/lithely.js',
     format: 'umd',
     plugins: [terser()]
   }, {
-    name: 'Qing',
-    file: 'dist/lib/qing.esm.js',
+    name: 'Lithely',
+    file: 'dist/lib/lithely.esm.js',
     format: 'es',
     plugins: [terser()]
   }],
