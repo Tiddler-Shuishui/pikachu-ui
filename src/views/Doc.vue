@@ -77,7 +77,7 @@ $aside-index: 10;
   > aside {
     flex-shrink: 0;
     @media (max-width: 500px) {
-      z-index: 100;
+      z-index: 1;
     }
   }
 
