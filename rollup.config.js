@@ -8,7 +8,7 @@ import {
 
 export default {
   input: 'src/lib/index.ts',
-  output: {
+  output: [{
     globals: {
       vue: 'Vue'
     },
@@ -16,7 +16,12 @@ export default {
     file: 'dist/lib/qing.js',
     format: 'umd',
     plugins: [terser()]
-  },
+  }, {
+    name: 'Qing',
+    file: 'dist/lib/qing.esm.js',
+    format: 'es',
+    plugins: [terser()]
+  }],
   plugins: [
     scss({
       include: /\.scss$/,
