@@ -1,47 +1,30 @@
 <template>
-  <button class="qing-button" :class="classes" :disabled="disabled">
+  <button class="qing-button" :class="classes" :disabled="disabled" @click="$emit('click',$event)">
     <span v-if="loading" class="qing-loadingIndicator"></span>
     <slot />
   </button>
 </template>
 
-<script lang="ts">
-import { computed } from 'vue'
-export default {
-  props: {
-    theme: {
-      type: String,
-      default: 'button',
-    },
-    size: {
-      type: String,
-      default: 'normal',
-    },
-    level: {
-      type: String,
-      default: 'normal',
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  setup(props) {
-    const { theme, size, level } = props
-    const classes = computed(() => {
-      return {
-        [`qing-theme-${theme}`]: theme,
-        [`qing-size-${size}`]: size,
-        [`qing-level-${level}`]: level,
-      }
-    })
-    return { classes }
-  },
-}
+<script lang="ts" setup="props">
+import { computed } from "vue";
+const props = defineProps<{
+  theme?: 'button' | 'text' | 'link';
+  size?: 'normal' | 'big' | 'small';
+  level?: 'normal' | 'main' | 'danger';
+  disabled?: boolean;
+  loading?: boolean;
+}>();
+const { theme, size, level } = props;
+defineEmits<{
+  (e: 'click', event: MouseEvent): void
+}>()
+const classes = computed(() => {
+  return {
+    [`qing-theme-${theme}`]: theme,
+    [`qing-size-${size}`]: size,
+    [`qing-level-${level}`]: level,
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -68,7 +51,7 @@ $grey: grey;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
 
-  & + & {
+  &+& {
     margin-left: 8px;
   }
 
@@ -90,6 +73,7 @@ $grey: grey;
     border-color: transparent;
     box-shadow: none;
     color: $blue;
+
     &:hover,
     &:focus {
       color: lingten($blue, 10%);
@@ -100,36 +84,43 @@ $grey: grey;
     border-color: transparent;
     box-shadow: none;
     color: inherit;
+
     &:hover,
     &:focus {
       background: darken(white, 5%);
     }
   }
+
   &.qing-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
+
   &.qing-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
+
   &.qing-theme-button {
     &.qing-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
+
       &:hover,
       &:focus {
         background: darken($blue, 10%);
         border-color: darken($blue, 10%);
       }
     }
+
     &.qing-level-danger {
       background: $red;
       border-color: $red;
       color: white;
+
       &:hover,
       &focus {
         background: darken($red, 10%);
@@ -137,31 +128,38 @@ $grey: grey;
       }
     }
   }
+
   &.qing-theme-text {
     &.qing-level-main {
       color: $blue;
+
       &:hover,
       &:focus {
         color: darken($blue, 10%);
       }
     }
+
     &.qing-level-danger {
       color: $red;
+
       &:hover,
       &:focus {
         color: darken($red, 10%);
       }
     }
   }
+
   &.qing-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
+
       &:hover {
         border-color: $grey;
       }
     }
   }
+
   &.qing-theme-link,
   &.qing-theme-text {
     &[disabled] {
@@ -169,7 +167,8 @@ $grey: grey;
       color: $grey;
     }
   }
-  > .qing-loadingIndicator {
+
+  >.qing-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -181,10 +180,12 @@ $grey: grey;
     animation: qing-spin 1s infinite linear;
   }
 }
+
 @keyframes qing-spin {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

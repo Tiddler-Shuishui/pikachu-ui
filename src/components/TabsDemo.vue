@@ -2,7 +2,7 @@
   <h1>Tabs 示例</h1>
   <Demo :component="Tabs1Demo" />
 </template>
-<script>
+<script lang="ts">
 import Demo from '../components/Demo.vue'
 import Tabs1Demo from '../components/Tabs1.demo.vue'
 export default {

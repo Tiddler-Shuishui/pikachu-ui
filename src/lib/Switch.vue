@@ -8,24 +8,18 @@
   </button>
 </template>
 
-<script lang="ts">
-import { ref } from 'vue'
-export default {
-  props: {
-    value: Boolean,
-  },
-  setup(props, context) {
-    const toggle = () => {
-      context.emit('update:value', !props.value)
-    }
-    return {
-      toggle,
-    }
-  },
-}
+<script lang="ts" setup="props, context">
+const props = defineProps<{ value: boolean }>()
+const emit = defineEmits<{
+  (e: 'update:value', visible: boolean): void;
+}>()
+const toggle = () => {
+  emit("update:value", !props.value);
+};
 </script>
 
 <style lang="scss" scoped>
+@use "sass:math";
 $h: 22px;
 $h2: $h - 4px;
 
