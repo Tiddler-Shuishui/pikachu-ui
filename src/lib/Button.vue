@@ -7,13 +7,17 @@
 
 <script lang="ts" setup="props">
 import { computed } from "vue";
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   theme?: 'button' | 'text' | 'link';
   size?: 'normal' | 'big' | 'small';
   level?: 'normal' | 'main' | 'danger';
   disabled?: boolean;
   loading?: boolean;
-}>();
+}>(),{
+  theme: 'button',
+  size: 'normal',
+  level: 'normal'
+});
 const { theme, size, level } = props;
 defineEmits<{
   (e: 'click', event: MouseEvent): void
@@ -76,7 +80,7 @@ $grey: grey;
 
     &:hover,
     &:focus {
-      color: lingten($blue, 10%);
+      color: linear-gradient($blue, 10%);
     }
   }
 
@@ -89,6 +93,12 @@ $grey: grey;
     &:focus {
       background: darken(white, 5%);
     }
+  }
+
+  &.pi-size-normal {
+    font-size: 16px;
+    height: 32px;
+    padding: 0 8px;
   }
 
   &.pi-size-big {
