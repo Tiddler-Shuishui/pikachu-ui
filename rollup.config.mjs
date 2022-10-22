@@ -12,13 +12,13 @@ export default {
     globals: {
       vue: 'Vue'
     },
-    name: 'Lithely',
-    file: 'dist/lib/lithely.js',
+    name: 'Pikachu',
+    file: 'dist/lib/pikachu.js',
     format: 'umd',
     plugins: [terser()]
   }, {
-    name: 'Lithely',
-    file: 'dist/lib/lithely.esm.js',
+    name: 'Pikachu',
+    file: 'dist/lib/pikachu.esm.js',
     format: 'es',
     plugins: [terser()]
   }],

@@ -1,4 +1,4 @@
-# Lithely UI for Vue 3
+# Pikachu UI for Vue 3
 ## 运行步骤
 1. 运行 yarn
 2. 运行 yarn dev
@@ -11,3 +11,6 @@
 ## 库文件打包步骤
 1. 运行 rollup -c
 2. 得到的 dist/lib 目录就是编译后的库文件所在目录
+## npm发布步骤
+1. npm login
+2. npm publish
