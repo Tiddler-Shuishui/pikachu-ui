@@ -1,8 +1,8 @@
 <template>
-  <div class="qing-tabs">
-    <div class="qing-tabs-nav" ref="container">
+  <div class="pi-tabs">
+    <div class="pi-tabs-nav" ref="container">
       <div
-        class="qing-tabs-nav-item"
+        class="pi-tabs-nav-item"
         v-for="(t, index) in titles"
         :ref="
           (el) => {
@@ -15,9 +15,9 @@
       >
         {{ t }}
       </div>
-      <div class="qing-tabs-nav-item-indicator" ref="indicator"></div>
+      <div class="pi-tabs-nav-item-indicator" ref="indicator"></div>
     </div>
-    <div class="qing-tabs-content">
+    <div class="pi-tabs-content">
       <component :is="current" :key="current.props.title" />
     </div>
   </div>
@@ -81,7 +81,7 @@ $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
 
-.qing-tabs {
+.pi-tabs {
   &-nav {
     display: flex;
     color: $color;

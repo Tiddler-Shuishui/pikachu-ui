@@ -1,6 +1,6 @@
 <template>
-  <button class="qing-button" :class="classes" :disabled="disabled" @click="$emit('click',$event)">
-    <span v-if="loading" class="qing-loadingIndicator"></span>
+  <button class="pi-button" :class="classes" :disabled="disabled" @click="$emit('click',$event)">
+    <span v-if="loading" class="pi-loadingIndicator"></span>
     <slot />
   </button>
 </template>
@@ -20,9 +20,9 @@ defineEmits<{
 }>()
 const classes = computed(() => {
   return {
-    [`qing-theme-${theme}`]: theme,
-    [`qing-size-${size}`]: size,
-    [`qing-level-${level}`]: level,
+    [`pi-theme-${theme}`]: theme,
+    [`pi-size-${size}`]: size,
+    [`pi-level-${level}`]: level,
   }
 })
 </script>
@@ -36,7 +36,7 @@ $radius: 4px;
 $red: red;
 $grey: grey;
 
-.qing-button {
+.pi-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -69,7 +69,7 @@ $grey: grey;
     border: 0;
   }
 
-  &.qing-theme-link {
+  &.pi-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -80,7 +80,7 @@ $grey: grey;
     }
   }
 
-  &.qing-theme-text {
+  &.pi-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -91,20 +91,20 @@ $grey: grey;
     }
   }
 
-  &.qing-size-big {
+  &.pi-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
 
-  &.qing-size-small {
+  &.pi-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
 
-  &.qing-theme-button {
-    &.qing-level-main {
+  &.pi-theme-button {
+    &.pi-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -116,7 +116,7 @@ $grey: grey;
       }
     }
 
-    &.qing-level-danger {
+    &.pi-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -129,8 +129,8 @@ $grey: grey;
     }
   }
 
-  &.qing-theme-text {
-    &.qing-level-main {
+  &.pi-theme-text {
+    &.pi-level-main {
       color: $blue;
 
       &:hover,
@@ -139,7 +139,7 @@ $grey: grey;
       }
     }
 
-    &.qing-level-danger {
+    &.pi-level-danger {
       color: $red;
 
       &:hover,
@@ -149,7 +149,7 @@ $grey: grey;
     }
   }
 
-  &.qing-theme-button {
+  &.pi-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -160,15 +160,15 @@ $grey: grey;
     }
   }
 
-  &.qing-theme-link,
-  &.qing-theme-text {
+  &.pi-theme-link,
+  &.pi-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
 
-  >.qing-loadingIndicator {
+  >.pi-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -177,11 +177,11 @@ $grey: grey;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: qing-spin 1s infinite linear;
+    animation: pi-spin 1s infinite linear;
   }
 }
 
-@keyframes qing-spin {
+@keyframes pi-spin {
   0% {
     transform: rotate(0deg);
   }

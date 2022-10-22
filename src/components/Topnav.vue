@@ -1,8 +1,8 @@
 <template>
-  <div class="topnav">
+  <div class="topNav">
     <router-link to="/" class="logo">
       <svg class="icon">
-        <use xlink:href="#icon-qing"></use>
+        <use :xlink:href="logoHref"></use>
       </svg>
     </router-link>
     <ul class="menu">
@@ -24,21 +24,27 @@ export default {
       type: Boolean,
       default: false,
     },
+    logoIndex:{
+      type: Number,
+      default: 1
+    }
   },
-  setup() {
+  setup(props) {
     const asideVisible = inject<Ref<boolean>>('asideVisible')
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value
     }
+    const logoHref = '#icon-pikachu-'+(props.logoIndex === 1 ? '1' : '2')
     return {
       toggleAside,
+      logoHref
     }
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.topnav {
+.topNav {
   display: flex;
   padding: 16px;
   position: fixed;

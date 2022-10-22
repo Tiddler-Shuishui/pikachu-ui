@@ -1,8 +1,8 @@
 <template>
   <button
-    class="qing-switch"
+    class="pi-switch"
     @click="toggle"
-    :class="{ 'qing-checked': value }"
+    :class="{ 'pi-checked': value }"
   >
     <span></span>
   </button>
@@ -23,7 +23,7 @@ const toggle = () => {
 $h: 22px;
 $h2: $h - 4px;
 
-.qing-switch {
+.pi-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -32,7 +32,7 @@ $h2: $h - 4px;
   position: relative;
   transition: background 250ms;
 
-  &.qing-checked {
+  &.pi-checked {
     background: blue;
 
     > span {

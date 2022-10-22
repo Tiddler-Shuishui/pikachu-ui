@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Topnav toggleMenuVisible class="nav" />
+    <TopNav toggleMenuVisible :logoIndex="2" class="nav" />
     <div class="content">
       <aside v-if="asideVisible">
         <h2>文档</h2>
@@ -33,11 +33,11 @@
 </template>
 
 <script lang="ts">
-import Topnav from '../components/Topnav.vue'
+import TopNav from '../components/TopNav.vue'
 import { inject, Ref } from 'vue'
 export default {
   components: {
-    Topnav,
+    TopNav,
   },
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible')
@@ -88,7 +88,7 @@ $aside-index: 10;
 }
 
 aside {
-  background: lightblue;
+  background: #ffc200;
   width: 150px;
 
   position: fixed;
@@ -108,7 +108,7 @@ aside {
       a {
         padding: 0 16px;
         &.router-link-active {
-          background: white;
+          background: rgba(255,255,255,.7);
           display: block;
         }
       }

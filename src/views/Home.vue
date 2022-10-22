@@ -1,8 +1,8 @@
 <template>
-  <div class="topnavAndBanner">
-    <Topnav />
+  <div class="topNavAndBanner">
+    <TopNav />
     <div class="banner">
-      <h1>Lithely UI</h1>
+      <h1>Pikachu UI</h1>
       <h2>一个很厉害的 UI 框架</h2>
       <p class="actions">
         <a href="https://github.com/Tiddler-Shuishui/lithely-ui">GitHub</a>
@@ -38,21 +38,21 @@
 </template>
 
 <script lang="ts">
-import Topnav from '../components/Topnav.vue'
+import TopNav from '../components/TopNav.vue'
 export default {
   components: {
-    Topnav,
+    TopNav,
   },
 }
 </script>
 
 <style lang="scss" scoped>
-$green: #bbeeeb;
-.topnavAndBanner {
+$green: rgba(255,255,255,.3);
+.topNavAndBanner {
   background: linear-gradient(
     145deg,
-    rgba(227, 255, 253, 1) 0%,
-    rgba(183, 233, 230, 1) 100%
+    rgba(255, 176, 0, 1) 0%,
+    rgba(255, 212, 0, 1) 100%
   );
   clip-path: ellipse(80% 100% at 50% -20%);
 }
