@@ -11,7 +11,7 @@
       </li>
     </ul>
     <svg v-if="toggleMenuVisible" class="toggleAside" @click="toggleAside">
-      <use xlink:href="#icon-menu"></use>
+      <use xlink:href="#icon-pikachu-1"></use>
     </svg>
   </div>
 </template>
@@ -76,7 +76,7 @@ export default {
     display: inline-block;
     width: 32px;
     height: 32px;
-    background: fade-out($color: #000000, $amount: 0.9);
+    // background: fade-out($color: #000000, $amount: 0.9);
     position: absolute;
     left: 16px;
     top: 50%;
