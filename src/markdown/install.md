@@ -3,13 +3,13 @@
 打开终端运行下列命令：
 
 ```
-npm install pi-ui
+npm install pikachu-ui
 ```
 
 或
 
 ```
-yarn add pi-ui
+yarn add pikachu-ui
 ```
 
 下一节：[开始使用](#/doc/get-started)

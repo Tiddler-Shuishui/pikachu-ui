@@ -5,7 +5,7 @@
       <h1>Pikachu UI</h1>
       <h2>一个很厉害的 UI 框架</h2>
       <p class="actions">
-        <a href="https://github.com/Tiddler-Shuishui/lithely-ui">GitHub</a>
+        <a href="https://github.com/Tiddler-Shuishui/pikachu-ui">GitHub</a>
         <router-link to="/doc">开始</router-link>
       </p>
     </div>
@@ -73,7 +73,7 @@ $green: rgba(255,255,255,.3);
       $h: 28px;
       height: $h;
       line-height: $h;
-      border-radius: $h/2;
+      border-radius: calc($h / 2);
       padding: 0 8px;
     }
   }

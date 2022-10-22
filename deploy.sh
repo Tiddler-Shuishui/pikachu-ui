@@ -5,7 +5,7 @@ git init &&
 git add . &&
 git commit -m 'update' &&
 git branch -M main &&
-git remote add origin git@github.com:Tiddler-Shuishui/qing-ui-website.git &&
+git remote add origin git@github.com:Tiddler-Shuishui/pikachu-ui-website.git &&
 git push -f -u origin main &&
 cd -
-echo https://tiddler-shuishui.github.io/qing-ui-website/
+echo https://tiddler-shuishui.github.io/pikachu-ui-website/

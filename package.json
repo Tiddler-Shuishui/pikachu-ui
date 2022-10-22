@@ -1,11 +1,11 @@
 {
-  "name": "lithely-ui",
+  "name": "pikachu-ui",
   "version": "0.0.0",
   "files": [
     "dist/lib/*"
   ],
-  "main": "dist/lib/lithely.js",
-  "module": "dist/lib/lithely.esm.js",
+  "main": "dist/lib/pikachu.js",
+  "module": "dist/lib/pikachu.esm.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
