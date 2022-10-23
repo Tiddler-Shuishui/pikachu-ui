@@ -33,6 +33,11 @@ export const router = createRouter({
         { path: 'radio', component: RadioDemo },
       ],
     },
+    ,
+    {
+      path: '/:w+',
+      redirect:'/'
+    }
   ],
 })
 router.afterEach(() => {
